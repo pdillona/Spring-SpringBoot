@@ -1,0 +1,11 @@
+2023-09-26T12:29:15.950+09:00  INFO 2228 --- [main] kr.ch07.mapper.User1MapperTest           : Starting User1MapperTest using Java 17.0.8.1 with PID 2228 (started by Java in C:\Users\Java\Desktop\workspace\Spring\Ch07)
+2023-09-26T12:29:15.954+09:00  INFO 2228 --- [main] kr.ch07.mapper.User1MapperTest           : No active profile set, falling back to 1 default profile: "default"
+2023-09-26T12:29:16.370+09:00  INFO 2228 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-09-26T12:29:16.377+09:00  INFO 2228 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JDBC repository interfaces.
+2023-09-26T12:29:16.757+09:00  INFO 2228 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-09-26T12:29:16.985+09:00  INFO 2228 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-26T12:29:19.158+09:00  INFO 2228 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@299fc582
+2023-09-26T12:29:19.161+09:00  INFO 2228 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-26T12:29:19.263+09:00  INFO 2228 --- [main] kr.ch07.mapper.User1MapperTest           : Started User1MapperTest in 3.492 seconds (process running for 4.042)
+2023-09-26T12:29:19.758+09:00  INFO 2228 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-26T12:29:21.427+09:00  INFO 2228 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

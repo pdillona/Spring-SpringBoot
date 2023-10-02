@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h4>Thymeleaf 반복문</h4>
+	<table border="1">
+		<tr>
+			<td>아이디</td>
+			<td>이름</th>
+			<td>생년월일</th>
+			<td>성별</th>
+			<td>나이</th>
+			<td>주소</th>
+			<td>휴대폰</th>
+			<td>삭제/수정</th>
+		</tr>
+		<tr th:each="user:${users}">
+			<td th:text="${user.uid}">아이디</td>
+			<td th:text="${user.name}">이름</td>
+			<td>[[${user.birth}]]</td>
+			<td>[[${user.gender}]]</td>
+			<td>[[${user.age}]]</td>
+			<td>[[${user.addr}]]</td>
+			<td>[[${user.hp}]]</td>
+			<td><a>삭제</a><a>수정햣 ㅔㅕ</a></td>
+		</tr>
+	</table>
+</body>
+</html>
