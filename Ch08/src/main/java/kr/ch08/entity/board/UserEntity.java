@@ -1,11 +1,16 @@
-package kr.ch08.entity;
+package kr.ch08.entity.board;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import kr.ch08.dto.User1DTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,30 +18,26 @@ import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Builder
 @Entity
-@Table(name = "User1")
-public class User1Entity {
+@Table(name="BoardUser")
+public class UserEntity {
 
 	@Id
 	private String uid;
 	private String name;
 	private String hp;
-	private int age;
 	
-	// DTO 변환 메서드
-	public User1DTO toDTO() {
-		
-		return User1DTO.builder()
-				.uid(uid)
-				.name(name)
-				.hp(hp)
-				.age(age)
-				.build();
-	}
-	
+	@CreationTimestamp
+	private LocalDateTime regDate;
 	
 }
+
+
+
+
+
+

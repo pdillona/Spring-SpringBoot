@@ -15,15 +15,13 @@ import lombok.ToString;
 @ToString
 @Builder
 public class User1DTO {
-	
 	private String uid;
 	private String name;
 	private String hp;
 	private int age;
 	
+	// Entity 변환 메서드
 	public User1Entity toEntity() {
-
-		
 		
 		return User1Entity.builder()
 				.uid(uid)
@@ -32,5 +30,18 @@ public class User1DTO {
 				.age(age)
 				.build();
 	}
-
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
