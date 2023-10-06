@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6"
+>
+	<head>
+		<meta charset="UTF-8">
+		<title>Ch10::index</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script th:src="@{/js/user3.js}"></script>
+
+	</head>
+	<body>
+		<h3>Ch10.Spring Rest API실습</h3>
+		
+		
+		<h4>User3</h4>
+		<!--
+			GET: /user1
+			GET: /user1/{id}
+			POST: /user1
+			PUT: /user1
+			DELETE: /user1/{id}
+			
+			ex) GET: /user1/{id}에서 주소 파라메타가 여러개 필요할 경우 GET: /user1/{id}/~~/~~로 나간다.
+		-->
+		
+		<h4>User3</h4>
+		<button id="BtnUser3s">목록</button>
+		<button id="BtnUser3">조회</button>
+		<button id="BtnUser3Register">등록</button>
+		<button id="BtnUser3Modify">수정</button>
+		<button id="BtnUser3Delete">삭제</button>
+
+	</body>
+</html>

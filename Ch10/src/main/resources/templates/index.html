@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6"
+>
+	<head>
+		<meta charset="UTF-8">
+		<title>Ch10::index</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script th:src="@{/js/user1.js}"></script>
+		<script th:src="@{/js/user2.js}"></script>
+		
+	</head>
+	<body>
+		<h3>Ch10.Spring Rest API실습</h3>
+		
+		
+		<h4>User1</h4>
+		<!--
+			GET: /user1
+			GET: /user1/{id}
+			POST: /user1
+			PUT: /user1
+			DELETE: /user1/{id}
+			
+			ex) GET: /user1/{id}에서 주소 파라메타가 여러개 필요할 경우 GET: /user1/{id}/~~/~~로 나간다.
+		-->
+		
+		<h4>User1 </h4>
+		<h5>API실습</h5>
+		<button id="BtnUser1s">목록</button>
+		<button id="BtnUser1">조회</button>
+		
+		<a th:href="@{/user1/list}">목록</a>
+		<a th:href="@{/user1/register}">등록</a>
+		
+		
+		<h4>User1</h4>
+		<button id="BtnUser1s">목록</button>
+		<button id="BtnUser1">조회</button>
+		<button id="BtnUser1Register">등록</button>
+		<button id="BtnUser1Modify">수정</button>
+		<button id="BtnUser1Delete">삭제</button>
+	
+		<h4>User2</h4>
+		<button id="BtnUser2s">목록</button>
+		<button id="BtnUser2">조회</button>
+		<button id="BtnUser2Register">등록</button>
+		<button id="BtnUser2Modify">수정</button>
+		<button id="BtnUser2Delete">삭제</button>
+
+	</body>
+</html>

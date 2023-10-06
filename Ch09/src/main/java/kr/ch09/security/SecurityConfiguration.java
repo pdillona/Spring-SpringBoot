@@ -25,7 +25,9 @@ public class SecurityConfiguration {
 				authorizeHttpRequests
 					.requestMatchers("/").permitAll()
 					.requestMatchers("/admin/**").hasAuthority("ADMIN")
+					//.requestMatchers("/admin/**").hasRole("ADMIN")
 					.requestMatchers("/manager/**").hasAnyAuthority("ADMIN", "MANAGER")
+					//.requestMatchers("/manager/**").hasAnyRole("ADMIN", "MANAGER")
 					.requestMatchers("/user/**").permitAll()
 				);
 		

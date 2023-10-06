@@ -34,11 +34,14 @@ public class MyUserDetails implements UserDetails{
 	private LocalDateTime regDate;
 	
 	
+	//사용자 권한을 가져옴
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// 계정이 갖는 권한 목록
+		// 반드시 접두어로 ROLE_입력 해야함 그래야 hasRole(), hasAnyRole() 메서드가 처리됨.
+		// 만약 ROLE_ 접두어를 안쓰면 hasAuthority(), hasAnyAuthority() 메서드로 해야함.
 		List<GrantedAuthority> authorities = new ArrayList<>();
-		authorities.add(new SimpleGrantedAuthority("ROLE"+role));
+		authorities.add(new SimpleGrantedAuthority("ROLE_"+role));
 		
 		return authorities;
 	}
