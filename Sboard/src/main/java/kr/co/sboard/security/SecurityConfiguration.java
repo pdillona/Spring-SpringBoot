@@ -26,10 +26,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class SecurityConfiguration implements WebMvcConfigurer {
 
-
-	@Autowired
-	private SecurityUserService service;
-	
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		
@@ -38,7 +34,7 @@ public class SecurityConfiguration implements WebMvcConfigurer {
 			.csrf(CsrfConfigurer::disable) // 메서드 참조 연산자로 람다식을 간결하게 표현
 			// 폼 로그인 설정
 			.formLogin(config -> config.loginPage("/user/login")
-									   .defaultSuccessUrl("/")
+									   .defaultSuccessUrl("/", true)
 									   .failureUrl("/user/login?success=100")
 									   .usernameParameter("uid")
 									   .passwordParameter("pass"))
@@ -52,8 +48,8 @@ public class SecurityConfiguration implements WebMvcConfigurer {
 
 			// 인가 권한 설정
 			.authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
-									.requestMatchers("/admin/**").hasAuthority("ADMIN")
-									.requestMatchers("/manager/**").hasAnyAuthority("ADMIN", "MANAGER")
+									.requestMatchers("/admin/**").hasRole("ADMIN")
+									.requestMatchers("/article/**").hasAnyRole("ADMIN", "MANAGER", "USER")
 									.requestMatchers("/user/**").permitAll()
 									.requestMatchers("/").authenticated()
 									.requestMatchers("/vendor/**", "/js/**", "/dist/**", "/data/**", "/less/**").permitAll());
