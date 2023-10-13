@@ -1,6 +1,3 @@
-jwt:
-    issuer: pdill@gmail.com
-    secret: jax1Xz0xf18F23L4Q0sxvcLTBbL0wf94
 logging:
     file:
         name: log/Ch11.log
@@ -21,9 +18,9 @@ server:
 spring:
     datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        password: Sa1953vb!
-        url: jdbc:mysql://54.252.40.235:3306/Jboard
-        username: root
+        password: 1234
+        url: jdbc:mysql://13.124.190.156:3306/Jboard
+        username: chhak
     devtools:
         livereload:
             enabled: true
@@ -33,6 +30,7 @@ spring:
     jpa:
         database: mysql
         hibernate:
+            # 배포할 때는 반드시 none, 개발할 때는 가급적 update
             ddl-auto: none
             naming:
                 physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
@@ -48,7 +46,9 @@ spring:
     thymeleaf:
         cache: false
         # prefix 설정을 안하면 HTML 수정 후 브라우저에서 새로고침 반영안됨
-        prefix: file:src/main/resources/templates/
+        # 그리고 반드시 classpaht 경로로 쓰고 templates 마지막에 슬러쉬(/) 붙이면 배포파일 실행안됨
+        # 그런데 마지막에 슬러쉬 붙이고 안붙이고는 본인의 Controller에서 리턴되는 view 경로의 슬러쉬 여부에 따라 달라짐
+        prefix: classpath:/templates
 
     servlet:
         multipart:

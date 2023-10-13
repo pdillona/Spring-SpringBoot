@@ -18,28 +18,13 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>제목입니다.</td>
-                            <td>길동이</td>
-                            <td>12</td>
-                            <td>2023-10-12</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>제목입니다.</td>
-                            <td>길동이</td>
-                            <td>12</td>
-                            <td>2023-10-12</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>제목입니다.</td>
-                            <td>길동이</td>
-                            <td>12</td>
-                            <td>2023-10-12</td>
-                        </tr>
-
+                            <tr th:each="article:${pageResponseDTO.dtoList}">
+                                <td>[[${article.no}]]</td>
+                                <td>[[${article.title}]]</td>
+                                <td>[[${article.writer}]]</td>
+                                <td>[[${article.hit}]]</td>
+                                <td>[[${article.rdate}]]</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -47,9 +32,31 @@
             </div>
             <!-- /.panel-body -->
         </div>
+
+        <div class="text-center">
+            <ul class="pagination">
+
+
+                <li th:if="${pageResponseDTO.prev}" class="paginate_button previous" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
+                    <a th:href="@{/article/list(cate=free,pg=${pageResponseDTO.start - 1})}">이전</a>
+                </li>
+
+                <li th:each="num: ${#numbers.sequence(pageResponseDTO.start, pageResponseDTO.end)}"
+                    class="paginate_button"
+                    aria-controls="dataTables-example"
+                    tabindex="0">
+                    <a th:href="@{/article/list(cate=free,pg=${num})}">[[${num}]]</a>
+                </li>
+
+                <li th:if="${pageResponseDTO.next}" class="paginate_button next" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next">
+                    <a th:href="@{/article/list(cate=free,pg=${pageResponseDTO.end + 1})}">다음</a>
+                </li>
+            </ul>
+        </div>
+
         <!-- /.panel -->
         <div class="text-right">
-            <a th:href="@{/article/register}"  class="btn btn-primary">글쓰기</a>
+            <a th:href="@{/article/write(cate=${pageResponseDTO.cate})}"  class="btn btn-primary">글쓰기</a>
         </div>
     </div>
 

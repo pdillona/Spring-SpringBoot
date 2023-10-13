@@ -24,8 +24,7 @@ public class UserService {
     private PasswordEncoder passwordEncoder;
 
 
-    public TermsEntity findByTerms(){
-        return termsRepository.findById(1).get();
+    public TermsEntity findByTerms(){return termsRepository.findById(1).get();
     }
 
     public void save(UserDTO dto){
